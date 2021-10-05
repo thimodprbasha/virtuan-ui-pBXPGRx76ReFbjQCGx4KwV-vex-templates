@@ -16,18 +16,18 @@
 */
 
 :root {
---sidenav-background:;
---sidenav-toolbar-background: ;
---sidenav-item-dropdown-background: ;
---sidenav-color: ;
---sidenav-item-color: ;
---sidenav-item-background-active: ;
---sidenav-item-dropdown-background-hover: ;
---toolbar-color: ;
---toolbar-icon-color: ;
---sidenav-item-icon-color: ;
---sidenav-item-icon-color-active: ;
+--sidenav-background:#611fdb;
+--sidenav-toolbar-background: #611fdb;
+--sidenav-item-dropdown-background: #611fdb;
+--sidenav-color: #b442ff;
+--sidenav-item-color: #b442ff;
+--sidenav-item-background-active: #0265bb;
+--sidenav-item-dropdown-background-hover: #0265bb;
+--toolbar-color: #1f1fff;
+--toolbar-icon-color: #1f1fff;
+--sidenav-item-icon-color: #1f1fff;
+--sidenav-item-icon-color-active: #1b2ba1;
 --sidenav-item-color-active: white;
---color-primary: ;
+--color-primary: #1f1fff;
 }
 

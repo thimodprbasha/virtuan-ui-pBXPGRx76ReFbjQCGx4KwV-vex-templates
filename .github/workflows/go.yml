@@ -22,14 +22,14 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
           image: ${{ secrets.DOCKER_USERNAME }}/com.vex.templates_vex-templates
-          tags: vR5i6io3mbdi4c8gcGe9A4L
+          tags: vvBbcQsqTAKnjEkBuchHjsK
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
     - name: helm update
       run: |
           # update the helm file
-          sed -i 's/:v.*/:vR5i6io3mbdi4c8gcGe9A4L/g' helm/templates/service-gen-deployment.yaml
+          sed -i 's/:v.*/:vvBbcQsqTAKnjEkBuchHjsK/g' helm/templates/service-gen-deployment.yaml
 
     - name: Commit & Push changes
       uses: actions-js/push@master
