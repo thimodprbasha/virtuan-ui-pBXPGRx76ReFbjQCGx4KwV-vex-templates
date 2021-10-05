@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vex-templates
+  labels:
+    app: vex-templates
+spec:
+  selector:
+    matchLabels:
+      app: vex-templates
+  replicas:  1
+  template:
+    metadata:
+      labels:
+        app: vex-templates
+    spec:
+      containers:
+       - name: vex-templates
+         image: thimodprabasha/com.vex.templates_vex-templates:vR5i6io3mbdi4c8gcGe9A4L
+         imagePullPolicy: Always
+         ports:
+          - containerPort: 8080
+            name: rest
+      imagePullSecrets:
+          - name: notavailable

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: vex-templatessrv
+    service: vex-templatessrv
+  name: vex-templatessrv
+spec:
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: vex-templates
