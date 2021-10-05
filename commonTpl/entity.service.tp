@@ -1,0 +1,48 @@
+﻿import { Injectable } from '@angular/core';
+import { HttpClient,HttpResponse,HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { {{.model}} } from 'src/app/_models/{{.model}}.model';
+import { createRequestOption } from 'src/@vex/utils/request-util';
+import { environment } from 'src/environments/environment';
+
+type EntityArrayResponseType = HttpResponse<{{.model}}[]>;
+type EntityResponseType = HttpResponse<{{.model}}>;
+
+
+@Injectable({ providedIn: 'root' })
+export class {{.model}}ManageService {
+    constructor(private http: HttpClient) {
+   
+    }
+ 
+    create(manager: {{.model}}): Observable<EntityResponseType> {
+      return this.http.post<{{.model}}>(`${environment.apiUrl}/{{.entityName}}`, manager, { observe: 'response' });
+    }
+  
+    update(manager: {{.model}}): Observable<EntityResponseType> {
+      return this.http.put<{{.model}}>(`${environment.apiUrl}/{{.entityName}}`, manager, { observe: 'response' });
+    }
+  
+    find(id: number): Observable<EntityResponseType> {
+      return this.http.get<{{.model}}>(`${environment.apiUrl}/{{.entityName}}/${id}`, { observe: 'response' });
+    }
+  
+    query(req?: any): Observable<EntityArrayResponseType> {
+     // const options = createRequestOption(req);
+      return this.http.get<{{.model}}[]>(`${environment.apiUrl}/{{.entityName}}`, { params: req, observe: 'response' });
+    }
+  
+    delete(id: number): Observable<HttpResponse<any>> {
+      return this.http.delete<any>(`${environment.apiUrl}/{{.entityName}}/${id}`, { observe: 'response' });
+    }
+
+    deleteAll(managers: {{.model}}[]): Observable<HttpResponse<any>> {
+      return this.http.post<{{.model}}[]>(`${environment.apiUrl}/{{.entityName}}/delete`,managers, { observe: 'response' });
+    }
+
+    uploadFile(data, id): Observable<HttpResponse<any>> {
+    return this.http.post<any>(`${environment.apiUrl}/upload-file/${id}`, data, { observe: 'response' });
+  }
+
+}

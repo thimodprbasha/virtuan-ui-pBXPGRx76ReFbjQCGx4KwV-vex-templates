@@ -1,0 +1,33 @@
+@import "~simplebar/dist/simplebar.css";
+@import "~highlight.js/styles/androidstudio.css";
+// Vex Core
+@import "./@vex/styles/core";
+
+/*
+  You can override any CSS Variable or style here
+  Example:
+
+  :root {
+   --sidenav-background: #333333;
+  }
+
+  All possible variables can be found in @vex/styles/core or by simply inspecting the element you want to change
+  in Chrome/Firefox DevTools
+*/
+
+:root {
+--sidenav-background:;
+--sidenav-toolbar-background: ;
+--sidenav-item-dropdown-background: ;
+--sidenav-color: ;
+--sidenav-item-color: ;
+--sidenav-item-background-active: ;
+--sidenav-item-dropdown-background-hover: ;
+--toolbar-color: ;
+--toolbar-icon-color: ;
+--sidenav-item-icon-color: ;
+--sidenav-item-icon-color-active: ;
+--sidenav-item-color-active: white;
+--color-primary: ;
+}
+

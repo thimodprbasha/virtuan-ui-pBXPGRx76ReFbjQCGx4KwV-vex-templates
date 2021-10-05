@@ -1,0 +1,12 @@
+{{.import}}
+
+export class {{.model}} {
+
+  {{.properties}}
+
+  constructor({{.simpleModelName}}) {
+
+    {{.constructor}}
+  }
+
+}

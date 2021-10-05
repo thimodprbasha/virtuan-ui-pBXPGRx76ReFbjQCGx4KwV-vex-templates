@@ -1,0 +1,27 @@
+import { Injectable } from '@angular/core';
+import { HttpClient,HttpResponse,HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Scrumboard } from './interfaces/scrumboard.interface';
+import { createRequestOption } from 'src/@vex/utils/request-util';
+import { environment } from 'src/environments/environment';
+
+type ScrumboardResponseType = HttpResponse<Scrumboard>;
+
+
+@Injectable({ providedIn: 'root' })
+export class ScrumboardManageService {
+    constructor(private http: HttpClient) {
+
+    }
+
+    getScrumboardData(): Observable<ScrumboardResponseType> {
+      return this.http.get<Scrumboard>(`${environment.apiUrl}/{{.entityName}}/scrumboard`, { observe: 'response' });
+    }
+
+    updateScrumboardData(updateData): Observable<any> {
+     // const options = createRequestOption(req);
+      return this.http.put<any>(`${environment.apiUrl}/{{.entityName}}/scrumboard`, updateData, { observe: 'response' });
+    }
+
+}
