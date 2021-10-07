@@ -16,12 +16,24 @@ const childrenRoutes: VexRoutes = [  {
     loadChildren: () => import('./pages/Testpage1/testpage1.module').then(m => m.Testpage1Module),
   },
   {
+    path: 'models/page5',
+    loadChildren: () => import('./pages/Page5/page5.module').then(m => m.Page5Module),
+  },
+  {
     path: 'models/page4',
     loadChildren: () => import('./pages/Page4/page4.module').then(m => m.Page4Module),
   },
   {
+    path: 'models/page6',
+    loadChildren: () => import('./pages/Page6/page6.module').then(m => m.Page6Module),
+  },
+  {
     path: 'models/page2',
     loadChildren: () => import('./pages/Page2/page2.module').then(m => m.Page2Module),
+  },
+  {
+    path: 'models/page6',
+    loadChildren: () => import('./pages/Page6/page6.module').then(m => m.Page6Module),
   },
   {
     path: 'models/page3',

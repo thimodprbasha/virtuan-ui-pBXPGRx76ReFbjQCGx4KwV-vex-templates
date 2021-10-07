@@ -111,15 +111,9 @@ export class AppComponent {
 
     this.navigationService.items =  [
         {
-label:'add',
+label:'add 4',
 type:"link",
-route:'/models/testpage1',
-icon:icLayers
-},
-{
-label:'add 3',
-type:"link",
-route:'/models/page3',
+route:'/models/page4',
 icon:icLayers
 },
 {
@@ -129,9 +123,27 @@ route:'/models/page2',
 icon:icLayers
 },
 {
-label:'add 4',
+label:'page 5',
 type:"link",
-route:'/models/page4',
+route:'/models/page5',
+icon:icLayers
+},
+{
+label:'page 6',
+type:"link",
+route:'/models/page6',
+icon:icLayers
+},
+{
+label:'add',
+type:"link",
+route:'/models/testpage1',
+icon:icLayers
+},
+{
+label:'add 3',
+type:"link",
+route:'/models/page3',
 icon:icLayers
 }
 
