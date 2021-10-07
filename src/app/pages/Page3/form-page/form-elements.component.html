@@ -9,69 +9,66 @@
 
     </div>
 </vex-page-layout-header>
-<div [@stagger]="true" class="p-gutter" vexContainer>
-    <form (ngSubmit)="save()" [formGroup]="form">
-
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" style="margin-bottom: 20px;">
-    <div @fadeInUp class="card" fxFlex="auto">
-      <div class="px-6 py-4 border-b" fxLayout="row" fxLayoutAlign="start center">
-        <h2 class="title m-0">Testmodel</h2>
-      </div>
-
-      <div class="px-6 py-4" fxLayout="column">
-         
-    <mat-form-field class="flex-auto">
-      <mat-label>Objectuuid</mat-label>
-       <input type="text" formControlName="objectuuid" matInput>
-       <mat-error *ngIf="form.controls.objectuuid.hasError('required')">This field is required</mat-error>
-    </mat-form-field> 
-
-
-    <mat-form-field class="flex-auto">
-      <mat-label>Created At</mat-label>
-        <input formControlName="createdat"  matInput [matDatepicker]="pickercreatedat">
- <mat-datepicker-toggle matSuffix [for]="pickercreatedat"></mat-datepicker-toggle>
- <mat-datepicker #pickercreatedat color="primary"></mat-datepicker>
-       
-    </mat-form-field> 
-
-
-    <mat-form-field class="flex-auto">
-      <mat-label>Updated At</mat-label>
-        <input formControlName="updatedat"  matInput [matDatepicker]="pickerupdatedat">
- <mat-datepicker-toggle matSuffix [for]="pickerupdatedat"></mat-datepicker-toggle>
- <mat-datepicker #pickerupdatedat color="primary"></mat-datepicker>
-       
-    </mat-form-field> 
-
-
-    <mat-form-field class="flex-auto">
-      <mat-label>Deleted At</mat-label>
-        <input formControlName="deletedat"  matInput [matDatepicker]="pickerdeletedat">
- <mat-datepicker-toggle matSuffix [for]="pickerdeletedat"></mat-datepicker-toggle>
- <mat-datepicker #pickerdeletedat color="primary"></mat-datepicker>
-       
-    </mat-form-field>
+  <div class="container h-100">
+    <div class="row align-items-center w-100">
+      <div class="col-md-6 mx-auto">
+        <mat-card style="width: 100%;">
+          <mat-card-title>Sign Up</mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-card-content style="padding-top: 20px;">
+            <form class="example-form">
+              <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>First name</mat-label>
+                  <input matInput>
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Long Last Name That Will Be Truncated</mat-label>
+                  <input matInput>
+                </mat-form-field></td>
+              </tr></table>
+            
+              <p>
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Address</mat-label>
+                  <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Address 2</mat-label>
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </p>
+            
+              <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>City</mat-label>
+                  <input matInput placeholder="Ex. San Francisco">
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>State</mat-label>
+                  <input matInput placeholder="Ex. California">
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Postal Code</mat-label>
+                  <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
+                  <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                </mat-form-field></td>
+              </tr></table>
+              
+              <p>
+                <!-- <mat-form-field class="example-full-width" appearance="outline"> -->
+                  <mat-label>Slider</mat-label>
+                  <mat-slider aria-label="unit(s)" style="margin-left: 10px; width: 200px"></mat-slider>
+                <!-- </mat-form-field> -->
+            </form>
+          </mat-card-content>
+          <mat-card-actions align="end" style="padding-right: 20px; padding-bottom: 20px;" >
+            <button mat-stroked-button>Cancel</button>
+            <button mat-raised-button color="primary" >Sign Up</button>
+          </mat-card-actions>
+        </mat-card>
       </div>
     </div>
 
-</div>
-
-
-        <div class="row-style" fxLayout="row"  fxLayoutAlign="end center">
-
-            <button type="submit"
-                    class="ltr:ml-4 rtl:mr-4"
-                    color="primary"
-                    fxFlex="none"
-                    fxLayoutAlign="start right"
-                    fxHide.xs
-                    mat-raised-button>
-
-                <span>SAVE</span>
-            </button>
-
-        </div>
-    </form>
-</div>
+  </div>
 </vex-page-layout>

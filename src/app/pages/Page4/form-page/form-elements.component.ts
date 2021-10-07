@@ -29,6 +29,7 @@ import icLocationCity from '@iconify/icons-ic/twotone-location-city';
 import icEditLocation from '@iconify/icons-ic/twotone-edit-location';
 import { HttpResponse, HttpErrorResponse, HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'vex-form-elements',
   templateUrl: './form-elements.component.html',
@@ -41,95 +42,33 @@ import { HttpResponse, HttpErrorResponse, HttpClient } from '@angular/common/htt
 })
 export class FormElementsComponent implements OnInit {
 
- 
+  isLinear = true;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
 
-form: FormGroup;
-mode: 'create' | 'update' = 'create';
-queryParams : any;
-icMoreVert = icMoreVert;
-icClose = icClose;
+  hide = true;
+  isChecked:boolean = false;
+  disabled = false;
 
-icPrint = icPrint;
-icDownload = icDownload;
-icDelete = icDelete;
 
-icPerson = icPerson;
-icMyLocation = icMyLocation;
-icLocationCity = icLocationCity;
-icEditLocation = icEditLocation;
-icPhone = icPhone;
 
-constructor(
-    private fb: FormBuilder,
-    private activatedRoute: ActivatedRoute,
-    private _snackBar: MatSnackBar,
-    private httpClient: HttpClient,
-    private formService: FormPageManageService) {
-}
+constructor(private _formBuilder: FormBuilder) {}
 
 ngOnInit() {
-  
-  this.form = this.fb.group({
-  objectuuid: [ [], [Validators.required]],
-createdat: [ [], [Validators.required]],
-updatedat: [ [], [Validators.required]],
-deletedat: [ [], [Validators.required]]
-});
-   
+  this.firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['', Validators.required]
+  });
+  this.secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required]
+  });
+  this.thirdFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required]
+  });
 }
 
 
 
-save() {
-  const object = this.createSaveObject();
-  if(this.queryParams && this.queryParams.params) {
-    this.subscribeToSaveResponse(this.formService.save(object, this.queryParams.params));
-  } else {
-    this.subscribeToSaveResponse(this.formService.save(object, {}));
-  }
-}
-
- 
-
-isCreateMode() {
-  return this.mode === 'create';
-}
-
-isUpdateMode() {
-  return this.mode === 'update';
-}
-
-protected onError(errorMessage: string) {
-  console.log(errorMessage);
-  this._snackBar.open('Error occured while saving!' , 'Close');
-}
-
-createSaveObject(){
-  let obj: Testmodel = {};
-  obj.objectuuid= this.form.get('objectuuid').value;
-obj.createdat= this.form.get('createdat').value;
-obj.updatedat= this.form.get('updatedat').value;
-obj.deletedat= this.form.get('deletedat').value;
-  return obj;
-}
-
-
-protected subscribeToSaveResponse(result: Observable<HttpResponse<Testmodel>>) {
-  result.pipe(
-      map((res: HttpResponse<Testmodel>) => res.body)
-).subscribe(
-      (res: Testmodel) => {
-    console.log("object saved");
-    this._snackBar.open('Saved successfully!', 'Close');
-    this.form.reset();
-    Object.keys(this.form.controls).forEach(key => {
-      this.form.get(key).setErrors(null) ;
-    });
-  },
-  (res: HttpErrorResponse) => this.onError(res.message)
-
-);
-}
 
 
 }

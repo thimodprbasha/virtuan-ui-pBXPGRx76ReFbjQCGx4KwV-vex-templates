@@ -7,3 +7,20 @@
   margin: 2%;
   margin-top: 1%;
 }
+
+
+.example-form {
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+::ng-deep .mat-form-field-infix {
+  width: 0% !important;
+}

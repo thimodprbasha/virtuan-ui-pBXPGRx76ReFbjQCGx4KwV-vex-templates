@@ -7,3 +7,40 @@
   margin: 2%;
   margin-top: 1%;
 }
+
+.form-width{
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+
+.example-form {
+  width: 100%;
+}
+
+
+.button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+::ng-deep .mat-form-field-infix {
+  width: 0% !important;
+}
+
+.mat-header{
+  padding-top: 20px; 
+  padding-bottom: 20px;
+}
+
+.mat-header h2{
+  font-size: 22px; 
+  font-weight:400;
+}
+
+.mat-header p{
+  font-size: 15px; 
+  font-weight:200;
+}

@@ -43,93 +43,78 @@ export class FormElementsComponent implements OnInit {
 
  
 
-form: FormGroup;
-mode: 'create' | 'update' = 'create';
-queryParams : any;
-icMoreVert = icMoreVert;
-icClose = icClose;
+// form: FormGroup;
+// mode: 'create' | 'update' = 'create';
+// queryParams : any;
+// icMoreVert = icMoreVert;
+// icClose = icClose;
 
-icPrint = icPrint;
-icDownload = icDownload;
-icDelete = icDelete;
+// icPrint = icPrint;
+// icDownload = icDownload;
+// icDelete = icDelete;
 
-icPerson = icPerson;
-icMyLocation = icMyLocation;
-icLocationCity = icLocationCity;
-icEditLocation = icEditLocation;
-icPhone = icPhone;
+// icPerson = icPerson;
+// icMyLocation = icMyLocation;
+// icLocationCity = icLocationCity;
+// icEditLocation = icEditLocation;
+// icPhone = icPhone;
 
-constructor(
-    private fb: FormBuilder,
-    private activatedRoute: ActivatedRoute,
-    private _snackBar: MatSnackBar,
-    private httpClient: HttpClient,
-    private formService: FormPageManageService) {
+constructor() {
 }
 
 ngOnInit() {
   
-  this.form = this.fb.group({
-  objectuuid: [ [], [Validators.required]],
-createdat: [ [], [Validators.required]],
-updatedat: [ [], [Validators.required]],
-deletedat: [ [], [Validators.required]]
-});
+  
    
 }
 
 
 
-save() {
-  const object = this.createSaveObject();
-  if(this.queryParams && this.queryParams.params) {
-    this.subscribeToSaveResponse(this.formService.save(object, this.queryParams.params));
-  } else {
-    this.subscribeToSaveResponse(this.formService.save(object, {}));
-  }
-}
+// save() {
+ 
+// }
 
  
 
-isCreateMode() {
-  return this.mode === 'create';
-}
+// isCreateMode() {
+//   return this.mode === 'create';
+// }
 
-isUpdateMode() {
-  return this.mode === 'update';
-}
+// isUpdateMode() {
+//   return this.mode === 'update';
+// }
 
-protected onError(errorMessage: string) {
-  console.log(errorMessage);
-  this._snackBar.open('Error occured while saving!' , 'Close');
-}
+// protected onError(errorMessage: string) {
+//   console.log(errorMessage);
+//   this._snackBar.open('Error occured while saving!' , 'Close');
+// }
 
-createSaveObject(){
-  let obj: Testmodel = {};
-  obj.objectuuid= this.form.get('objectuuid').value;
-obj.createdat= this.form.get('createdat').value;
-obj.updatedat= this.form.get('updatedat').value;
-obj.deletedat= this.form.get('deletedat').value;
-  return obj;
-}
+// createSaveObject(){
+//   let obj: Testmodel = {};
+//   obj.objectuuid= this.form.get('objectuuid').value;
+// obj.createdat= this.form.get('createdat').value;
+// obj.updatedat= this.form.get('updatedat').value;
+// obj.deletedat= this.form.get('deletedat').value;
+//   return obj;
+// }
 
 
-protected subscribeToSaveResponse(result: Observable<HttpResponse<Testmodel>>) {
-  result.pipe(
-      map((res: HttpResponse<Testmodel>) => res.body)
-).subscribe(
-      (res: Testmodel) => {
-    console.log("object saved");
-    this._snackBar.open('Saved successfully!', 'Close');
-    this.form.reset();
-    Object.keys(this.form.controls).forEach(key => {
-      this.form.get(key).setErrors(null) ;
-    });
-  },
-  (res: HttpErrorResponse) => this.onError(res.message)
+// protected subscribeToSaveResponse(result: Observable<HttpResponse<Testmodel>>) {
+//   result.pipe(
+//       map((res: HttpResponse<Testmodel>) => res.body)
+// ).subscribe(
+//       (res: Testmodel) => {
+//     console.log("object saved");
+//     this._snackBar.open('Saved successfully!', 'Close');
+//     this.form.reset();
+//     Object.keys(this.form.controls).forEach(key => {
+//       this.form.get(key).setErrors(null) ;
+//     });
+//   },
+//   (res: HttpErrorResponse) => this.onError(res.message)
 
-);
-}
+// );
+// }
 
 
 }

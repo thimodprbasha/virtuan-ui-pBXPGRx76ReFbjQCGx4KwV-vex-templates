@@ -28,6 +28,7 @@
     "@iconify/icons-fa-solid": "^1.0.1",
     "@iconify/icons-ic": "^1.0.0",
     "@iconify/icons-logos": "^1.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^5.3.1",
     "@ngx-loading-bar/core": "^4.2.0",
     "@ngx-loading-bar/router": "^4.2.0",
     "@visurel/iconify-angular": "^0.0.7",
