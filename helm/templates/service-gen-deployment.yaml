@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
        - name: vex-templates
-         image: thimodprabasha/com.vex.templates_vex-templates:vvBbcQsqTAKnjEkBuchHjsK
+         image: thimodprabasha/com.vex.templates_vex-templates:vZyksAy7sdRQVB7gsry3J36
          imagePullPolicy: Always
          ports:
           - containerPort: 8080
