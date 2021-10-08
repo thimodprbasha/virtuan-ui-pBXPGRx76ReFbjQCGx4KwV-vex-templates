@@ -1,5 +1,5 @@
 <vex-page-layout>
-<vex-page-layout-header fxLayout="column" fxLayoutAlign="center start">
+<!-- <vex-page-layout-header fxLayout="column" fxLayoutAlign="center start">
     <div [class.px-gutter]="'fullwidth'"
          class="w-full flex flex-col sm:flex-row justify-between">
         <div>
@@ -8,70 +8,20 @@
         </div>
 
     </div>
-</vex-page-layout-header>
-<div [@stagger]="true" class="p-gutter" vexContainer>
-    <form (ngSubmit)="save()" [formGroup]="form">
-
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" style="margin-bottom: 20px;">
-    <div @fadeInUp class="card" fxFlex="auto">
-      <div class="px-6 py-4 border-b" fxLayout="row" fxLayoutAlign="start center">
-        <h2 class="title m-0">Testmodel</h2>
+</vex-page-layout-header> -->
+<div class="error-bg">
+  <div class="row">
+    <div class="col-md-6 mx-auto ">
+      <div style="text-align: center; padding-top: 35px;">
+        <img class="w-full max-w-lg mx-auto mb-6" src="../../../../assets/img/illustrations/28.svg" alt="My Happy SVG" style="height: 500px;" />
       </div>
-
-      <div class="px-6 py-4" fxLayout="column">
-         
-    <mat-form-field class="flex-auto">
-      <mat-label>Objectuuid</mat-label>
-       <input type="text" formControlName="objectuuid" matInput>
-       <mat-error *ngIf="form.controls.objectuuid.hasError('required')">This field is required</mat-error>
-    </mat-form-field> 
-
-
-    <mat-form-field class="flex-auto">
-      <mat-label>Created At</mat-label>
-        <input formControlName="createdat"  matInput [matDatepicker]="pickercreatedat">
- <mat-datepicker-toggle matSuffix [for]="pickercreatedat"></mat-datepicker-toggle>
- <mat-datepicker #pickercreatedat color="primary"></mat-datepicker>
-       
-    </mat-form-field> 
-
-
-    <mat-form-field class="flex-auto">
-      <mat-label>Updated At</mat-label>
-        <input formControlName="updatedat"  matInput [matDatepicker]="pickerupdatedat">
- <mat-datepicker-toggle matSuffix [for]="pickerupdatedat"></mat-datepicker-toggle>
- <mat-datepicker #pickerupdatedat color="primary"></mat-datepicker>
-       
-    </mat-form-field> 
-
-
-    <mat-form-field class="flex-auto">
-      <mat-label>Deleted At</mat-label>
-        <input formControlName="deletedat"  matInput [matDatepicker]="pickerdeletedat">
- <mat-datepicker-toggle matSuffix [for]="pickerdeletedat"></mat-datepicker-toggle>
- <mat-datepicker #pickerdeletedat color="primary"></mat-datepicker>
-       
-    </mat-form-field>
+      <div style="text-align: center; padding-top: 35px;">
+        <h1 class="display-3 font-medium m-0">404</h1>
+        <h2 class="headline m-0">Page not found.</h2>
       </div>
+      
+  
     </div>
-
-</div>
-
-
-        <div class="row-style" fxLayout="row"  fxLayoutAlign="end center">
-
-            <button type="submit"
-                    class="ltr:ml-4 rtl:mr-4"
-                    color="primary"
-                    fxFlex="none"
-                    fxLayoutAlign="start right"
-                    fxHide.xs
-                    mat-raised-button>
-
-                <span>SAVE</span>
-            </button>
-
-        </div>
-    </form>
+  </div>
 </div>
 </vex-page-layout>

@@ -12,7 +12,7 @@ import { IconModule } from '@visurel/iconify-angular';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule , FormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -23,6 +23,11 @@ import { BreadcrumbsModule } from '../../../@vex/components/breadcrumbs/breadcru
 import { ContainerModule } from '../../../@vex/directives/container/container.module';
 import { MatSnackBarModule } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
+
+import {MatCardModule} from '@angular/material/card'; //--------------
+import {MatFormFieldModule} from '@angular/material/form-field';//-------------
+import {MatDividerModule} from '@angular/material/divider';//--------------------
+
 
 @NgModule({
   declarations: [FormElementsComponent],
@@ -48,7 +53,11 @@ import {HttpClientModule} from '@angular/common/http';
     BreadcrumbsModule,
     ContainerModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,//-----------
+    MatFormFieldModule,//-------
+    FormsModule,//-------------
+    MatDividerModule //-------------
   ]
 })
 export class Page5Module {
